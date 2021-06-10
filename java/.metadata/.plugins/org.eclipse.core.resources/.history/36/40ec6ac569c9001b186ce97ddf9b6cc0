@@ -1,0 +1,10 @@
+package com.brendan.weekone;
+
+public class Creature {
+	public String name;
+	
+	public Creature(String name) {
+		this.name = name;
+	}
+
+}

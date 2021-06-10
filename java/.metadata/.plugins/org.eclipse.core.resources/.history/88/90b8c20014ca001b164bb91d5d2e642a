@@ -1,0 +1,21 @@
+package com.brendan.classes;
+
+public class Circle extends Drawing implements AreaInterface {
+
+	public Circle() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public double getArea() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	void draw() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
