@@ -23,6 +23,7 @@ var node = new Node(7);
 class slStack {
     constructor() {
         this.top = null; // this.head, this.end
+        this.length = 0;
     }
 
     // add to top
@@ -55,6 +56,10 @@ class slStack {
     isEmpty() {
         return this.top === null;
     }
+
+    count(){
+        return this.length;
+    }
 }
 
 // bonus challenge: countStack
@@ -65,6 +70,7 @@ class slStack {
 // you may use one stack or array as additional storage
 // the given stack must be returned back to it's original order
 // you may only use public stack methods push pop peek isempty
+// see if you ccan do this faster than O(n)
 
 var myStack = new Stack();
 myStack.push(10);

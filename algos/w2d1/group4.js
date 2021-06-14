@@ -13,9 +13,12 @@ class slStack {
     }
 
     // add to top
-    push(newNode) {
+     push( data ) {
+        var newNode = new Node();
+        newNode.data = data;
         newNode.next = this.top;
         this.top = newNode;
+        console.log( newNode );
     }
 
     // remove from top
@@ -47,23 +50,24 @@ class slStack {
 // you may only use public stack methods push pop peek isempty
 
 var myStack = new slStack();
-myStack.push(new Node(10));
-myStack.push(new Node(10));
-myStack.push(new Node(25));
-myStack.pop();
+myStack.push(10);
+myStack.push(10);
+myStack.push(25);
+// myStack.pop();
 console.log(myStack);
 
 function countStack(stack) {
     var count = 0;
     var newStack = new slStack();
-    while(stack.peek != null){
+    while(stack.peek()){
         count++;
         newStack.push(stack.peek());
         stack.pop();
     }
-    while(newStack.peek !=null){
+    while(newStack.peek()){
         stack.push(newStack.peek());
     }
     console.log(stack);
     return count;
 };
+console.log(countStack(myStack));
