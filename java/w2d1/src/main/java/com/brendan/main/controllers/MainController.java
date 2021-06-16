@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class MainController {
@@ -27,8 +28,15 @@ public class MainController {
 	}
 	
 	@RequestMapping(path="/submit", method=RequestMethod.POST)
-	public String submit(@RequestParam String title, HttpSession session) {
-		System.out.println(title);
+	public String submit(@RequestParam String title,
+						 RedirectAttributes redirectAttributes,
+						 HttpSession session) {
+		
+
+		if(title.length() < 1) {
+			redirectAttributes.addFlashAttribute("error", "you must title your book!");
+			return "redirect:/";
+		}
 		
 		session.setAttribute("title", title);
 		

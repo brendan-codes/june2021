@@ -11,6 +11,9 @@
 </head>
 <body>
 	<h1>Please write your favorite Book</h1>
+	<p style="color:red">	
+		<c:out value="${error}"></c:out>
+	</p>
 	<form action="/submit" method="POST">
 		<input type="text" name="title" placeholder="Name your book!"/>
 		<input type="submit" value="what's your favorite book?"/>
