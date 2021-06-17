@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page isErrorPage="true" %>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<!DOCTYPE html>
-<h1>New Book</h1>
-<form:form action="/books" method="post" modelAttribute="book">
-<form:errors path="*"></form:errors>
+    
+<h1>Edit <c:out value="${editBook.title}"></c:out></h1>
+<form:form action="/books/${editBook.id}" method="post" modelAttribute="editBook">
+	<form:errors path="*" />
+    <input type="hidden" name="_method" value="put">
     <p>
         <form:label path="title">Title</form:label>
         <form:errors path="title"/>
@@ -28,4 +27,4 @@
         <form:input type="number" path="numberOfPages"/>
     </p>    
     <input type="submit" value="Submit"/>
-</form:form>    
+</form:form>

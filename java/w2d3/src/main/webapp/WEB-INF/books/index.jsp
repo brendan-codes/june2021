@@ -21,6 +21,7 @@
             <td><c:out value="${book.description}"/></td>
             <td><c:out value="${book.language}"/></td>
             <td><c:out value="${book.numberOfPages}"/></td>
+            <td><a href="/books/${book.id}/edit">Edit</a></td>
         </tr>
         </c:forEach>
     </tbody>
