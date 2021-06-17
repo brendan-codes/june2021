@@ -1,6 +1,6 @@
 INDEX VERSION 1.131+/Users/brendanstanton/Desktop/online/june2021/java/.metadata/.plugins/org.eclipse.jdt.core
+3919367627.index
 572064270.index
-2133583510.index
 3904083967.index
 1846741368.index
 933784655.index
@@ -22,15 +22,12 @@ INDEX VERSION 1.131+/Users/brendanstanton/Desktop/online/june2021/java/.metadata
 986233639.index
 3141505672.index
 2260754469.index
-4227293561.index
 2035127830.index
 919630594.index
 1454805695.index
 2092194997.index
-517603949.index
 1993802332.index
 1583199499.index
-2796334263.index
 1480730764.index
 1092254810.index
 499232181.index

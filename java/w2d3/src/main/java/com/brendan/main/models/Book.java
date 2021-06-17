@@ -25,7 +25,7 @@ public class Book {
     private Long id;
     
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="This needs to be much better dude!")
     private String title;
     
     @NotNull
