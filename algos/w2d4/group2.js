@@ -140,7 +140,7 @@ function isStackSorted(stack) {
 function greaterOfTwoStacks(stack1, stack2) {
     let sum1 = getSumOfStack(stack1);
     let sum2 = getSumOfStack(stack2);
-    if(sum1 > sum2){
+    if(sum1 >= sum2){
         return stack1;
     }else if(sum2 > sum1){
         return stack2;

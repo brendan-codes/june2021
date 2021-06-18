@@ -21,6 +21,10 @@ public class BookService {
         return bookRepo.findAll();
     }
     
+    public List<Book> booksNotInLibraries(){
+    	return bookRepo.findByLibraryIsNull();
+    }
+    
     // creates a book
     public Book createBook(Book b) {
         return bookRepo.save(b);

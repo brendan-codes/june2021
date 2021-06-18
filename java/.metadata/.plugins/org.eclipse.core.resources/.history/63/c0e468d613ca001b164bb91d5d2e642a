@@ -1,7 +1,0 @@
-package com.brendan.classes;
-
-public class Square extends Drawing implements AreaInterface {
-
-
-
-}

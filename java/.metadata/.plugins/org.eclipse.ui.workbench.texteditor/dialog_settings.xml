@@ -2,21 +2,33 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item key="wrap" value="true"/>
-		<item key="casesensitive" value="false"/>
+		<item key="casesensitive" value="true"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Dog"/>
+		<item key="selection" value="Book"/>
 		<list key="findhistory">
+			<item value="Book"/>
+			<item value="Books"/>
+			<item value="book"/>
+			<item value="books"/>
+			<item value="Repository"/>
+			<item value="BookRepository"/>
 			<item value="Cat"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Library"/>
+			<item value="Libraries"/>
+			<item value="library"/>
+			<item value="libraries"/>
+			<item value="Repo"/>
+			<item value="BookRepo"/>
 			<item value="Dog"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="611"/>
-		<item key="DIALOG_Y_ORIGIN" value="346"/>
+		<item key="DIALOG_X_ORIGIN" value="883"/>
+		<item key="DIALOG_Y_ORIGIN" value="327"/>
 		<item key="DIALOG_WIDTH" value="290"/>
 		<item key="DIALOG_HEIGHT" value="409"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>

@@ -6,7 +6,6 @@
 <!DOCTYPE html>
 <h1>New Book</h1>
 <form:form action="/books" method="post" modelAttribute="book">
-<form:errors path="*"></form:errors>
     <p>
         <form:label path="title">Title</form:label>
         <form:errors path="title"/>
@@ -26,6 +25,19 @@
         <form:label path="numberOfPages">Pages</form:label>
         <form:errors path="numberOfPages"/>     
         <form:input type="number" path="numberOfPages"/>
+    </p>
+    <p>
+    	<form:label path="library">Library</form:label>
+    	<form:errors path="library"/>
+    	<form:select path="library">
+    		<option value="" disabled selected>Please pick a library!</option>
+			<c:forEach items="${libraries}" var="l">
+				<form:option value="${l}">
+					<c:out value="${l.name}"></c:out>
+				</form:option>
+			</c:forEach>
+    	</form:select>
     </p>    
     <input type="submit" value="Submit"/>
-</form:form>    
+</form:form>
+<a href="/books">Go back</a>    

@@ -1,9 +1,0 @@
-package com.brendan.classes;
-
-public abstract class Drawing {
-
-	public Drawing() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -14,15 +14,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.brendan.main.models.Book;
 import com.brendan.main.services.BookService;
+import com.brendan.main.services.LibraryService;
 
 @Controller
 public class BooksController {
     private final BookService bookService;
-    public BooksController(BookService bookService) {
+    private final LibraryService libraryService;
+    public BooksController(BookService bookService, LibraryService libraryService) {
         this.bookService = bookService;
+        this.libraryService = libraryService;
     }
     
     // get
+    @RequestMapping("/")
+    public String redirect() {
+    	return "redirect:/books";
+    }
+    
     @RequestMapping("/books")
     public String index(Model model) {
         List<Book> books = bookService.allBooks();
@@ -32,14 +40,13 @@ public class BooksController {
     
     @RequestMapping("/books/new")
     public String newBook(@ModelAttribute("book") Book book, Model model) {
+    	model.addAttribute("libraries", libraryService.allLibraries());
         return "/books/new.jsp";
     }
     
     @RequestMapping("/books/{id}/edit")
     public String showEditBook(@PathVariable("id") Long id, Model model) {
     	Book myBook = bookService.findBook(id);
- 
-    	
     	model.addAttribute("editBook", myBook);
     	return "/books/edit.jsp";
     }
@@ -59,10 +66,12 @@ public class BooksController {
     
     //put
     @RequestMapping(value="/books/{id}", method=RequestMethod.PUT)
-    public String update(@Valid @ModelAttribute("editBook") Book book, 
-    					 BindingResult result,
-    					 Model model,
-    					 @PathVariable("id") Long id) {
+    public String update(
+    		@Valid @ModelAttribute("editBook") Book book, 
+    					            BindingResult result,
+    					                     Model model,
+    					     @PathVariable("id") Long id
+    					) {
         if (result.hasErrors()) {
             return "/books/edit.jsp";
         } else {

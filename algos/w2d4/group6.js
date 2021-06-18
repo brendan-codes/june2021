@@ -97,7 +97,9 @@ class Node {
 // using only one extra stack for storage, check if a given stack is sorted
 // return the stack back to it's original order when you are done
 // assume node.data are integers
-function isStackSorted(stack) {}
+function isStackSorted(stack) {
+    
+}
 
 // STACK - GREATER OF TWO STACKS
 // return the stack with the greater sum of numbers

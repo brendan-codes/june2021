@@ -28,3 +28,4 @@
     </p>    
     <input type="submit" value="Submit"/>
 </form:form>
+<a href="/books">Go back</a>
