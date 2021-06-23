@@ -32,11 +32,9 @@ public class Color {
     private Long id;
     
     @NotNull
-    @Size(min = 5, max = 200, message="This needs to be much better dude!")
+    @Size(min = 1, max = 200, message="This needs to be much better dude!")
     private String name;
     
-    @NotNull
-    @Size(min = 5, max = 200)
     private String hex;
     
     

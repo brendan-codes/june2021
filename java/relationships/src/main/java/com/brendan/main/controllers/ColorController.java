@@ -2,6 +2,7 @@ package com.brendan.main.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +29,15 @@ public class ColorController {
 	@Autowired
 	private ThingService thingService;
     
-    // redirect from root
-    @RequestMapping("/")
-    public String redirect() {
-    	return "redirect:/colors";
-    }
-    
     //show all
     @RequestMapping("/colors")
-    public String index(Model model) {
+    public String index(Model model, HttpSession session) {
+    	
+    	
+    	if(session.getAttribute("userId") == null) {
+    		return "redirect:/registration";
+    	}
+    	
         List<Color> colors = colorService.allColors();
         model.addAttribute("colors", colors);
         return "/colors/showAll.jsp";
@@ -69,14 +70,7 @@ public class ColorController {
     	return "redirect:/colors/" + color_id + "/edit";
     }
     
-    //show edit
-//    @RequestMapping("/colors/{id}/edit")
-//    public String showEditBook(@PathVariable("id") Long id, Model model) {
-//    	Book myBook = colorService.findBook(id);
-//    	model.addAttribute("editBook", myBook);
-//    	return "/colors/edit.jsp";
-//    }
-//    
+   
     // create
     @RequestMapping(value="/colors", method=RequestMethod.POST)
     public String create(@Valid @ModelAttribute("color") Color color, 
@@ -90,20 +84,4 @@ public class ColorController {
     }
     
     
-    //edit
-//    @RequestMapping(value="/colors/{id}", method=RequestMethod.PUT)
-//    public String update(
-//    		@Valid @ModelAttribute("editBook") Book color, 
-//    					            BindingResult result,
-//    					                     Model model,
-//    					     @PathVariable("id") Long id
-//    					) {
-//        if (result.hasErrors()) {
-//            return "/colors/edit.jsp";
-//        } else {
-//            colorService.editBook(color);
-//            return "redirect:/colors";
-//        }
-//    }
-
 }

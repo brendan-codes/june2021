@@ -6,10 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Library"/>
+		<item key="selection" value="Things"/>
 		<list key="findhistory">
-			<item value="Book"/>
+			<item value="Colors"/>
+			<item value="color"/>
+			<item value="Color"/>
 			<item value="book"/>
+			<item value="Book"/>
 			<item value="books"/>
 			<item value="Books"/>
 			<item value="Repository"/>
@@ -17,6 +20,11 @@
 			<item value="Cat"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Things"/>
+			<item value="thing"/>
+			<item value="Thing"/>
+			<item value="color"/>
+			<item value="Color"/>
 			<item value="Library"/>
 			<item value="library"/>
 			<item value="libraries"/>

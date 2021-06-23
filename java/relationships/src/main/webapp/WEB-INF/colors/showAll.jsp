@@ -14,7 +14,7 @@
 
 	 
 	 <c:forEach items="${colors}" var="c">
-	 	<p style="color: ${c.hex}"><a href="/colors/${c.id}/edit"><c:out value="${c.name}"></c:out></a></p>
+	 	<p><a href="/colors/${c.id}/edit"><c:out value="${c.name}"></c:out></a></p>
 	 
 	 </c:forEach>
 	<a href="/colors/new">Create a Color!</a>

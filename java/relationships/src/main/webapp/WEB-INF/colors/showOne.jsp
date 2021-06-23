@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<h1 style="color: ${color.hex}"><c:out value="${color.name}"></c:out></h1>
+	<h1><c:out value="${color.name}"></c:out></h1>
 	
 	<ul>
 		<c:forEach items="${color.things}" var="t">
