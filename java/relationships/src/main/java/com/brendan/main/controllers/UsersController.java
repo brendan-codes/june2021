@@ -14,15 +14,18 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.brendan.main.models.User;
 import com.brendan.main.services.UserService;
+import com.brendan.main.validators.UserValidator;
 
 //imports removed for brevity
 @Controller
 public class UsersController {
 	
 	private final UserService userService;
+	private final UserValidator userValidator;
 
-	public UsersController(UserService userService) {
+	public UsersController(UserService userService, UserValidator userValidator) {
 		this.userService = userService;
+		this.userValidator = userValidator;
 	}
 	
 	@RequestMapping("/")
@@ -45,7 +48,9 @@ public class UsersController {
 	public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session) {
 		// if result has errors, return the registration page (don't worry about validations just now)
      // else, save the user in the database, save the user id in session, and redirect them to the /home route
-        if(result.hasErrors()) {
+        userValidator.validate(user, result);
+		
+		if(result.hasErrors()) {
             return "/users/registration.jsp";
         }
         User u = userService.registerUser(user);

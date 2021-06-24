@@ -11,6 +11,9 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="users")
@@ -19,8 +22,11 @@ public class User {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
+    @NotNull
+    @Email(message="Email must be valid")
     private String email;
     
+    @Size(min=5, message="Password must be greater than 5 characters")
     private String password;
     
     @Transient

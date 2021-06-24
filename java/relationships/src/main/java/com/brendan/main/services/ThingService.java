@@ -15,7 +15,6 @@ import com.brendan.main.repos.ThingRepo;
 public class ThingService {
     // adding the thing Repo as a dependency
     private final ThingRepo thingRepo;
-    
     private final ColorRepo colorRepo;
     
     public ThingService(ThingRepo thingRepo, ColorRepo colorRepo) {
